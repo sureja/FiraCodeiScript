@@ -13,3 +13,44 @@ The Regular and Bold face styles are taken from [Fira Code](https://github.com/t
 Download or clone this repository and install the fonts on your system.
 
 In your editor of choice set the font to `Fira Code iScript`.  Also, ensure that the current theme and syntax highlighting utilize italic.
+
+
+### Also refer this stack overflow page to edit user settings.json 
+
+https://stackoverflow.com/questions/41320848/how-do-i-get-visual-studio-code-to-display-italic-fonts-in-formatted-code/50714195#50714195 
+
+```
+"editor.tokenColorCustomizations": {
+  "textMateRules": [
+    {
+      "scope": [
+        //following will be in italic (=FlottFlott)
+        "comment",
+        "entity.name.type.class", //class names
+        "keyword", //import, export, return…
+        "constant", //String, Number, Boolean…, this, super
+        "storage.modifier", //static keyword
+        "storage.type.class.js", //class keyword
+      ],
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        //following will be excluded from italics (VSCode has some defaults for italics)
+        "invalid",
+        "keyword.operator",
+        "constant.numeric.css",
+        "keyword.other.unit.px.css",
+        "constant.numeric.decimal.js",
+        "constant.numeric.json"
+      ],
+      "settings": {
+        "fontStyle": ""
+      }
+    }
+  ]
+}
+
+```
